@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Mazbill</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,Arial;
+scroll-behavior:smooth;
+}
+
+body{
+background:#020617;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero img{
+width:180px;
+margin-bottom:10px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+color:#94a3b8;
+margin-top:10px;
+}
+
+/* SECTION */
+
+.section{
+padding:40px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+/* CARD */
+
+.card{
+background:#0f172a;
+border-radius:15px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.card .info{
+padding:10px;
+}
+
+.harga{
+color:#22c55e;
+}
+
+/* PORTFOLIO */
+
+.portfolio img{
+width:100%;
+border-radius:10px;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.popup-content{
+background:#0f172a;
+padding:20px;
+border-radius:15px;
+width:300px;
+text-align:center;
+}
+
+.popup img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.btn{
+background:#22c55e;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+margin-top:10px;
+}
+
+.close{
+background:#ef4444;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
+
+/* FLOAT WA */
+
+.wa{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#22c55e;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:black;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="logo.png">
+
+<h1>Toko Mazbill</h1>
+
+<p>3D Part Low Poly – Support In Game</p>
+
+</div>
+
+
+<!-- PRODUK -->
+
+<div class="section">
+
+<h2>Produk 3D Part</h2>
+
+<div class="grid">
+
+<div class="card" onclick="detail('AKI + PANGKON W9','10k','produk1.jpg','Part aki dan pangkon W9 custom.')">
+<img src="produk1.jpg">
+<div class="info">
+AKI + PANGKON W9
+<div class="harga">Rp10k</div>
+</div>
+</div>
+
+<div class="card" onclick="detail('SHOCK RAZER','15k','produk2.jpg','Shock Razer custom.')">
+<img src="produk2.jpg">
+<div class="info">
+SHOCK RAZER
+<div class="harga">Rp15k</div>
+</div>
+</div>
+
+<div class="card" onclick="detail('SLEBOR HEREX','5k','produk3.jpg','Slebor gaya Herex.')">
+<img src="produk3.jpg">
+<div class="info">
+SLEBOR HEREX
+<div class="harga">Rp5k</div>
+</div>
+</div>
+
+<div class="card" onclick="detail('STOPLAMP + LIST COAK','15k','produk4.jpg','Stoplamp custom.')">
+<img src="produk4.jpg">
+<div class="info">
+STOPLAMP + LIST COAK
+<div class="harga">Rp15k</div>
+</div>
+</div>
+
+<div class="card" onclick="detail('TANGKI GL NAT LURUS CUSTOM','10k','produk5.jpg','Tangki GL custom.')">
+<img src="produk5.jpg">
+<div class="info">
+TANGKI GL NAT LURUS CUSTOM
+<div class="harga">Rp10k</div>
+</div>
+</div>
+
+<div class="card" onclick="detail('RANGKA GL STD MODIF','20k','produk6.jpg','Rangka GL modif.')">
+<img src="produk6.jpg">
+<div class="info">
+RANGKA GL STD MODIF
+<div class="harga">Rp20k</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- JASA -->
+
+<div class="section">
+
+<h2>Jasa Request Part</h2>
+
+<p style="text-align:center">
+
+Kami menyediakan jasa modeling part motor.<br><br>
+
+Format file:<br>
+OBJ • STL • FBX • GLB<br><br>
+
+Type modeling:<br>
+Low Poly<br>
+Size ringan<br>
+Support in game<br><br>
+
+Harga mulai 5k – 100k
+
+</p>
+
+<div style="text-align:center;margin-top:20px">
+
+<button class="btn" onclick="orderJasa()">ORDER</button>
+
+</div>
+
+</div>
+
+
+<!-- PORTFOLIO -->
+
+<div class="section">
+
+<h2>Portofolio Modeling</h2>
+
+<div class="grid portfolio">
+
+<img src="portfolio1.jpg">
+<img src="portfolio2.jpg">
+<img src="portfolio3.jpg">
+<img src="portfolio4.jpg">
+
+</div>
+
+</div>
+
+
+<!-- CARA ORDER -->
+
+<div class="section">
+
+<h2>Cara Order</h2>
+
+<p style="text-align:center">
+
+1. Pilih produk atau jasa request<br>
+2. Klik checkout / order<br>
+3. Kirim detail lewat WhatsApp<br>
+4. Proses modeling dimulai<br>
+5. File dikirim setelah selesai
+
+</p>
+
+</div>
+
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<img id="pimg">
+
+<h3 id="pnama"></h3>
+
+<p id="pdesk"></p>
+
+<p>
+
+Type modeling:<br>
+Low Poly<br>
+Size ringan<br>
+Support in game
+
+</p>
+
+<p id="pharga"></p>
+
+<button class="btn" onclick="checkout()">CHECK OUT</button>
+<br>
+<button class="btn close" onclick="tutup()">Tutup</button>
+
+</div>
+
+</div>
+
+
+<footer>
+
+Toko Mazbill<br>
+3D Modeling Low Poly Support In Game<br><br>
+
+WhatsApp: 0823-3829-5416<br>
+TikTok: @mazbill_
+
+</footer>
+
+
+<a class="wa" href="https://wa.me/6282338295416">💬</a>
+
+
+<script>
+
+let produk=""
+let harga=""
+
+function detail(n,h,img,desk){
+
+produk=n
+harga=h
+
+document.getElementById("pnama").innerText=n
+document.getElementById("pharga").innerText="Harga: Rp"+h
+document.getElementById("pimg").src=img
+document.getElementById("pdesk").innerText=desk
+
+document.getElementById("popup").style.display="flex"
+
+}
+
+function tutup(){
+
+document.getElementById("popup").style.display="none"
+
+}
+
+function checkout(){
+
+let nomor="6282338295416"
+
+let pesan=`Halo saya ingin membeli produk:
+
+${produk}
+Harga: ${harga}
+
+Type modeling:
+Low Poly - Size ringan - Support in game`
+
+let url=`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`
+
+window.open(url,"_blank")
+
+}
+
+function orderJasa(){
+
+let nomor="6282338295416"
+
+let pesan=`Halo saya ingin request part 3D
+
+Format:
+OBJ / STL / FBX / GLB`
+
+let url=`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`
+
+window.open(url,"_blank")
+
+}
+
+</script>
+
+</body>
+</html>
